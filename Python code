@@ -8,7 +8,7 @@ from reportlab.pdfgen import canvas
 import os
 
 def load_images_from_folders(folder_paths):
-    """C:\Users\xpayza\OneDrive - University of Gothenburg\Zahra\cellular imaging course\Homework\Chromatin\image Analys with python."""
+    """ """
     images = []
     for folder_path in folder_paths:
         images.extend(
