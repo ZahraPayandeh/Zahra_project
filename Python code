@@ -6,16 +6,12 @@ import glob
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import os
-
 def load_images_from_folders(folder_paths):
-    """ """
     images = []
     for folder_path in folder_paths:
         images.extend(
-            [cv2.imread(filename, cv2.IMREAD_GRAYSCALE) for filename in glob.glob(os.path.join(folder_path, '*.tif')) if cv2.imread(filename, cv2.IMREAD_GRAYSCALE) is not None]
-        )
+            [cv2.imread(filename, cv2.IMREAD_GRAYSCALE) for filename in glob.glob(os.path.join(folder_path, '*.tif')) if cv2.imread(filename, cv2.IMREAD_GRAYSCALE) is not None] )
     return images
-
 def preprocess_images(images):
     """Apply Gaussian Blur to a list of images."""
     return [cv2.GaussianBlur(image, (5, 5), 0) for image in images]
@@ -23,7 +19,6 @@ def preprocess_images(images):
 def segment_images(images):
     """Apply Otsu's thresholding to a list of images."""
     return [cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1] for image in images]
-
 def find_contours(images):
     """Find contours for a list of thresholded images."""
     return [cv2.findContours(image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0] for image in images]
