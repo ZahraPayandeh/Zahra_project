@@ -21,20 +21,20 @@ This project requires the following Python libraries:
 - glob`: For reading image files from folders.
 - ReportLab`: For generating PDF reports.
 
-File Structure
+### File Structure
 - main_script.py          Main Python script with image analysis and result generation
 - results.pdf             PDF file containing analysis results
 - nucleus_distribution.png  Histogram of nucleus area distributions (saved from the script)
 - images/                 Folder containing nucleus24 and nucleus38 images
 
-Usage
+## Usage
 1. Clone the repository or download the files.
 2. Install dependencies as mentioned above.
 3. Run the script by specifying the folders containing your `.tif` images:
    ```bash   python main_script.py
 4. The script will load images from the specified folders, perform the analysis, and generate a PDF file (`results.pdf`) with the results and visualizations.
 
-Methods
+## Methods
 1. Image Loading
 Images are loaded from user-specified folders using OpenCV. The images are read in grayscale format.
 2. Image Preprocessing
@@ -49,10 +49,10 @@ The area of each detected contour (nucleus) is calculated using OpenCV's `contou
 A t-test is performed to statistically compare the nucleus areas between the two groups, Nucleus24 and Nucleus38, using SciPy's `ttest_ind` function.
 7. Results Visualization
 Histograms are plotted to show the distribution of nuclear areas for each group. The results, including the t-test statistic and p-value, are saved to a PDF file.
-Results
+## Results
 T-statistic: Measures the statistical difference between the two groups of nucleus areas.
 P-value: Indicates the significance of the results (whether the difference is statistically significant).
 - A histogram of the nucleus size distribution is also included in the PDF report.
-License
+## License
 This project is open-source and free to use.
 
