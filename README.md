@@ -1,8 +1,8 @@
 # Zahra_project
 Project Title:  Nuclear Area Analysis using Python (Image Analysis and Statistical Analysis)
-# Aim
+## Aim
 The aim of this project is to assess the nuclear area stability between two groups of nucleus images: Nucleus24 and Nucleus38. The project includes steps such as image loading, preprocessing, segmentation, contour detection, area measurement, statistical analysis, and result visualization.
-# Project Overview
+## Project Overview
 This Python-based project analyzes and compares the nuclear areas between two groups of nuclei, Nucleus24 and Nucleus38. The analysis involves the following steps:
 - Loading grayscale `.tif` images from folders.
 - Preprocessing images with Gaussian Blur to reduce noise.
@@ -12,7 +12,7 @@ This Python-based project analyzes and compares the nuclear areas between two gr
 - Statistical comparison using a t-test.
 - Visualization of the nucleus size distribution.
 - Results and visualizations are saved to a PDF report.
-Dependencies
+### Dependencies
 This project requires the following Python libraries:
 - OpenCV`: For image processing and contour detection.
 - NumPy`: For array operations and statistical calculations.
