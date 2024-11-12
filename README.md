@@ -22,9 +22,9 @@ This project requires the following Python libraries:
 - ReportLab`: For generating PDF reports.
 
 ### File Structure
-- images/                 Folder containing nucleus24 and nucleus38 images
-- Code          Main Python script with image analysis and result generation
-- Results.pdf             PDF file containing analysis results
+- images: Folder containing nucleus24 and nucleus38 images
+- Code: Main Python script with image analysis and result generation
+- Results.pdf: PDF file containing analysis results
 
 ## Usage
 1. Clone the repository or download the files.
