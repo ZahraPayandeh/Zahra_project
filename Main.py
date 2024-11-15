@@ -62,8 +62,8 @@ def save_results_to_pdf(t_statistic, p_value, areas_nucleus24, areas_nucleus38):
     c.save()
 
 # Define folder paths
-nucleus24_folder = os.path.expanduser('~/Downloads/image-Analysis-with-python/groupA/')
-nucleus38_folder = os.path.expanduser('~/Downloads/image-Analysis-with-python/groupB/')
+nucleus24_folder = os.path.expanduser('Images/groupA/')
+nucleus38_folder = os.path.expanduser('Images/groupB/')
 
 # Load images from specified folders
 nucleus24_images = load_images_from_folders([nucleus24_folder])
