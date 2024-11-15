@@ -29,10 +29,10 @@ This project requires the following Python libraries:
 ## Usage
 1. Clone the repository or download the files.
 2. Install dependencies as mentioned above.
-3. Run the script by specifying the folders containing your `.tif` images:
-   ```bash
+4. Run the script by specifying the folders containing your `.tif` images:
+   ```
    python Main.py
-4. The script will load images from the specified folders, perform the analysis, and generate a PDF file (`results.pdf`) with the results and visualizations.
+5. The script will load images from the specified folders, perform the analysis, and generate a PDF file (`results.pdf`) with the results and visualizations.
 
 ## Methods
 1. Image Loading
