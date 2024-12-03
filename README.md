@@ -31,7 +31,7 @@ This project requires the following Python libraries:
 2. Install dependencies as mentioned above.
 4. Run the script by specifying the folders containing your `.tif` images:
    ```
-   python Main.py
+   python Main.py --groupA Images/groupA --groupB Images/groupB
 5. The script will load images from the specified folders, perform the analysis, and generate a PDF file (`results.pdf`) with the results and visualizations.
 
 ## Methods
