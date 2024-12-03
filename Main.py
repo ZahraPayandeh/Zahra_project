@@ -68,39 +68,33 @@ def save_results_to_pdf(t_statistic, p_value, areas_nucleus24, areas_nucleus38):
     c.drawImage("nucleus_distribution.png", 100, 400, width=400, height=300)  # Add image to PDF
     c.save()
     
-def main():
-    # Parse arguments
-    args = parse_arguments()
+# Define folder paths
+nucleus24_folder = os.path.expanduser('Images/groupA/')
+nucleus38_folder = os.path.expanduser('Images/groupB/')
+        
+# Load images from specified folders
+nucleus24_images = load_images_from_folders([nucleus24_folder])
+nucleus38_images = load_images_from_folders([nucleus38_folder])
+        
+# Preprocess images
+nucleus24_blur = preprocess_images(nucleus24_images)
+nucleus38_blur = preprocess_images(nucleus38_images)
+        
+# Segment images
+thresh_nucleus24 = segment_images(nucleus24_blur)
+thresh_nucleus38 = segment_images(nucleus38_blur)
+        
+# Find contours
+contours_nucleus24 = find_contours(thresh_nucleus24)
+contours_nucleus38 = find_contours(thresh_nucleus38)
+        
+# Measure areas
+areas_nucleus24 = measure_areas(contours_nucleus24)
+areas_nucleus38 = measure_areas(contours_nucleus38)
+        
+# Statistical comparison
+t_statistic, p_value = statistical_comparison(areas_nucleus24, areas_nucleus38)
+        
+# Call the function to save results
+save_results_to_pdf(t_statistic, p_value, areas_nucleus24, areas_nucleus38)
 
-    # Define folder paths
-    nucleus24_folder = os.path.expanduser('Images/groupA/')
-    nucleus38_folder = os.path.expanduser('Images/groupB/')
-    
-    # Load images from specified folders
-    nucleus24_images = load_images_from_folders([nucleus24_folder])
-    nucleus38_images = load_images_from_folders([nucleus38_folder])
-    
-    # Preprocess images
-    nucleus24_blur = preprocess_images(nucleus24_images)
-    nucleus38_blur = preprocess_images(nucleus38_images)
-    
-    # Segment images
-    thresh_nucleus24 = segment_images(nucleus24_blur)
-    thresh_nucleus38 = segment_images(nucleus38_blur)
-    
-    # Find contours
-    contours_nucleus24 = find_contours(thresh_nucleus24)
-    contours_nucleus38 = find_contours(thresh_nucleus38)
-    
-    # Measure areas
-    areas_nucleus24 = measure_areas(contours_nucleus24)
-    areas_nucleus38 = measure_areas(contours_nucleus38)
-    
-    # Statistical comparison
-    t_statistic, p_value = statistical_comparison(areas_nucleus24, areas_nucleus38)
-    
-    # Call the function to save results
-    save_results_to_pdf(t_statistic, p_value, areas_nucleus24, areas_nucleus38)
-
-if __name__ == "__main__":
-    main()
