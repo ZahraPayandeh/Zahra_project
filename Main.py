@@ -10,8 +10,8 @@ import os
 def parse_arguments():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(description="Process images from two groups for statistical comparison.")
-    parser.add_argument('--groupA', type=str, required=True, help="Path to the folder containing Group A images")
-    parser.add_argument('--groupB', type=str, required=True, help="Path to the folder containing Group B images")
+    parser.add_argument('--groupA', type=str, required=True, help='Images/groupA/')
+    parser.add_argument('--groupB', type=str, required=True, help='Images/groupB/')
     return parser.parse_args()
 def load_images_from_folders(folder_paths):
     images = []
@@ -69,8 +69,9 @@ def save_results_to_pdf(t_statistic, p_value, areas_nucleus24, areas_nucleus38):
     c.save()
     
 # Define folder paths
-nucleus24_folder = os.path.expanduser('Images/groupA/')
-nucleus38_folder = os.path.expanduser('Images/groupB/')
+args = parse_arguments()
+nucleus24_folder = args.groupA
+nucleus38_folder = args.groupB
         
 # Load images from specified folders
 nucleus24_images = load_images_from_folders([nucleus24_folder])
